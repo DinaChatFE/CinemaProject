@@ -1,0 +1,179 @@
+@font-face {
+  src: url(../fonts/SF-pro-text.ttf);
+  font-family: cinemaFont;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+body .nav--div {
+  font-family: "cinemaFont";
+  font-size: 15px;
+}
+
+body .nav--div h1 {
+  font-size: 1.5rem;
+}
+
+@media only screen and (min-width: 900px) {
+  body .nav--div h1 {
+    padding-left: 160px;
+    font-size: 30px;
+  }
+}
+
+@media only screen and (min-width: 900px) {
+  body .nav--div .div__context {
+    padding-right: 160px;
+  }
+}
+
+body .nav-header {
+  height: 80px;
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-pack: center !important;
+      -ms-flex-pack: center !important;
+          justify-content: center !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  border-bottom: 1px solid #cccc;
+  padding: 20px;
+  font-family: "cinemaFont";
+}
+
+@media screen and (min-width: 900px) {
+  body .nav-header .nav-header {
+    padding: 0px;
+  }
+}
+
+body .nav-header h1 {
+  padding: 0px 0px 0px 90px !important;
+  margin: 0 10px;
+  font-family: cinemaFont;
+  font-size: 28px;
+  font-family: "cinemaFont";
+}
+
+body .nav-header .div__context {
+  display: -webkit-box !important;
+  display: -ms-flexbox !important;
+  display: flex !important;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 40px;
+}
+
+body .nav-header .div__context a {
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  font-weight: 500;
+  font-family: "cinemaFont";
+}
+
+body .nav-header .div__context .navLink {
+  font-family: cinemaFont;
+  list-style-type: none;
+  display: inline-block;
+  margin: 0 10px;
+}
+
+body .nav-header .div__context #cartICon {
+  font-size: 24px;
+  margin-right: 50px;
+}
+
+body #bodyContainer {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-top: 100px;
+  max-width: 1200px !important;
+  margin: 0px auto !important;
+  padding: 50px;
+}
+
+body #bodyContainer #intro {
+  padding-left: 50px;
+  width: 80%;
+  font-family: cinemaFont;
+}
+
+@media screen and (max-width: 1200px) {
+  body #bodyContainer #intro {
+    padding-left: 0px;
+    width: 100%;
+  }
+}
+
+body #bodyContainer #intro h3 {
+  font-size: 30px;
+}
+
+body #bodyContainer #intro p {
+  font-size: 18px;
+}
+
+body #bodyContainer #intro #bookingBt {
+  margin-top: 50px;
+  width: 200px;
+  background-color: #e720b7;
+}
+
+body #bodyContainer #cinemaImage {
+  width: 40%;
+  padding-right: 100px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+
+body #bodyContainer #cinemaImage img {
+  width: 350px;
+}
+
+@media screen and (max-width: 1200px) {
+  body #bodyContainer #cinemaImage {
+    display: none;
+  }
+}
+
+body #line {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 80px;
+}
+
+body #line .separator {
+  width: 500px;
+  height: 12px;
+  border-bottom: 1px solid black;
+}
+
+body #footer {
+  border-top: 1px solid #cccc;
+  height: 300px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  margin: 90px 0px;
+  padding: 20px 0px;
+}
+/*# sourceMappingURL=home.css.map */

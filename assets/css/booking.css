@@ -1,0 +1,111 @@
+@font-face {
+  src: url(../fonts/SF-pro-text.ttf);
+  font-family: cinemaFont;
+  font-style: normal;
+}
+
+body {
+  margin: 0;
+}
+
+body #mListTitle {
+  margin-left: 100px;
+  font-size: clamp(1rem, 1.5vw, 1.5rem);
+  margin: 20px 10px;
+  font-family: "cinemaFont";
+  font-weight: 600;
+}
+
+body #list {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 90%;
+}
+
+body #list #movieGrid {
+  max-width: 250px;
+  height: 350px;
+  border: 1px solid #cccc;
+  border-radius: 20px;
+  margin: 5px 10px;
+  font-family: "cinemaFont" !important;
+  overflow: hidden;
+}
+
+body #list #movieGrid:hover {
+  border: 1px solid #e720b7;
+}
+
+body #list #movieGrid #movieImage {
+  -o-object-fit: cover;
+     object-fit: cover;
+  width: 100%;
+  height: 65%;
+  border-radius: 20px;
+}
+
+body #list #movieGrid #priceAndTitle {
+  padding: 10px 0px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 20px;
+  font-size: 18px;
+}
+
+body #list #movieGrid #priceAndTitle #price {
+  color: green;
+}
+
+body #list #movieGrid #dateAndTime {
+  font-size: 12px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  margin: 0 20px;
+}
+
+body #hallList {
+  width: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #hallList .hall {
+  width: 100px;
+  height: 100px;
+  margin: 5px 5px;
+  background-color: rgba(0, 0, 0, 0.5);
+  border-radius: 10px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #hallList .hall p {
+  color: #fff;
+}
+/*# sourceMappingURL=booking.css.map */
