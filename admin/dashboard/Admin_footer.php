@@ -169,7 +169,7 @@ $(document).ready(function() {
         const hall_id = $(this).parent().parent().children(':nth-child(11)');
         const ImageView = $(this).parent().parent().children(':last-child()');
 
-        console.log(hall_id)
+
         $("#Movie_title_update").attr('value', '' + MovieTitle.val());
         $(
             "#duration_time_update").attr('value', '' + durationTime1.val());
@@ -183,6 +183,9 @@ $(document).ready(function() {
 
 
         $("#Updatebtn").click(function(e) {
+
+
+
             e.preventDefault()
             var validationTitle12 = false;
             var validationDuration = false;
@@ -191,8 +194,10 @@ $(document).ready(function() {
             const movieTitleUp = $("#Movie_title_update").val();
             const durationTimeUp = $("#duration_time_update").val();
             const MoviePriceUp = $("#Movie_price_update").val();
-            const imageNameUp = $('#file_input-Update')[0].files[0]['name'];
 
+
+
+            const imageNameUp = $('#file_input-Update')[0].files[0]['name'];
 
             if (movieTitleUp === '') {
                 $("#errorMovieTitleUpdate").removeClass('d-none');
@@ -219,13 +224,14 @@ $(document).ready(function() {
                 $("#errorfileImageUpdate").addClass('d-none');
                 validationFileImage = true;
             }
+            console.log(movieTitleUp, durationTimeUp, MoviePriceUp, imageNameUp)
             if (validationTitle12 == true && validationMoviePrice == true &&
                 validationDuration == true && validationFileImage == true) {
                 $.ajax({
-                    type: "POST",
+                    method: "POST",
                     url: "EditData.php",
                     data: {
-                        'movieID': ItemID,
+                        'movieID': ItemID.val(),
                         'movieTitle': movieTitleUp,
                         'DurTime': durationTimeUp,
                         'moviePrice': MoviePriceUp,
@@ -234,7 +240,7 @@ $(document).ready(function() {
                     cache: false,
                     success: function() {
                         $.ajax({
-                            type: "Get",
+                            type: "GET",
                             url: "GetData.php",
                             data: "data",
                             success: function(data) {

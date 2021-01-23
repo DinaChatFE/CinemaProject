@@ -1,6 +1,11 @@
 <?php
 include 'admin_header.php';
 ?>
+<style>
+.data-nav li:nth-child(1) a {
+    color: blue !important;
+}
+</style>
 <div class="container-fluid">
     <div class="row">
 
