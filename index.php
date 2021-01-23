@@ -1,6 +1,18 @@
+<?php
+
+?>
+
 <!DOCTYPE html>
 <html>
 
+<head>
+    <style>
+    .navbar-nav li:nth-child(1) a {
+        color: black !important;
+    }
+    </style>
+
+</head>
 
 <body>
     <?php include "header.php"?>

@@ -21,7 +21,7 @@ function postData($conn, $sql, $callBack)
 function fetchAssoc($conn, $sql)
 {
     $result = mysqli_query($conn, $sql);
-    $result_assocc = mysqli_fetch_assoc($result, MYSQLI_ASSOC);
+    $result_assocc = mysqli_fetch_assoc($result);
 
     return $result_assocc;
 }

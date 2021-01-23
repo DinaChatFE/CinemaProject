@@ -1,3 +1,10 @@
+<?php
+
+session_start();
+include 'config/Auth.php';
+
+?>
+
 <head>
     <title>Home</title>
     <link href="assets/css/home.css" type="text/css" rel="stylesheet">
@@ -9,6 +16,40 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="assets/css/booking_detail.css"></script>
+
+    <style>
+    .arvata_tage {
+        top: 15px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-size: 1.3rem;
+        font-weight: bold;
+        right: 30px;
+        position: absolute;
+        color: #fff;
+        background-color: #e720b7;
+        border-radius: 50%;
+        width: 45px;
+        height: 45px;
+        transition: .3s ease;
+        box-shadow: 1px 2px 4px rgb(0, 0, 0, 0.09);
+    }
+
+    @media screen and (max-width: 1000px) {
+        .arvata_tage {
+            display: none;
+        }
+    }
+
+    .arvata_tage:hover {
+        text-decoration: none;
+        background-color: #6e0857;
+        color: #fff;
+    }
+    </style>
+
 </head>
 
 <!--Navigation Bar-->
@@ -22,7 +63,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-end div__context" id="navbarNav">
         <ul class="navbar-nav">
-            <li class="nav-item active">
+            <li class="nav-item">
                 <a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
@@ -34,9 +75,17 @@
             <li class="nav-item">
                 <a class="nav-link" href="#">CONTACT</a>
             </li>
+
+            <a href="#"
+                class="arvata_tage"><?php echo ucfirst($_SESSION['name'][0]) . ucfirst($_SESSION['name'][1]) ?></a>
             <li class="nav-item">
-                <a class="nav-link" href="#">LOGIN</a>
+                <a class="nav-link" href="log_in.php" id="log_out">LOG OUT</a>
             </li>
+
         </ul>
     </div>
 </nav>
+
+<body>
+    <script src="javascript/log_out.js"></script>
+</body>
