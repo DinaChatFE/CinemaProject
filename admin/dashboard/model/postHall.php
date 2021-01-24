@@ -3,7 +3,6 @@
 include '../config/db.php';
 $hall_name = $_POST['hall_name'];
 $seat_amount = $_POST['seat_amount'];
-$session = $_POST['session_detail'];
 
 if (isset($_POST['submit_hall'])) {
 
@@ -37,7 +36,7 @@ if (isset($_POST['submit_hall'])) {
             }
         }
 
-        header("Location: ../hallDetail/hall.php");
+        header("Location: ../hall.php");
     }
 
 }

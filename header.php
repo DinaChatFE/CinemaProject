@@ -17,8 +17,11 @@ include 'config/Auth.php';
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
     <script src="assets/css/booking_detail.css"></script>
-
+    <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="assets/OwlCarousel/dist/assets/owl.theme.default.min.css">
     <style>
+    @import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
     .arvata_tage {
         top: 15px;
         display: flex;
@@ -67,7 +70,7 @@ include 'config/Auth.php';
                 <a class="nav-link" href="index.php">HOME <span class="sr-only">(current)</span></a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="book.php">BOOKING</a>
+                <a class="nav-link" href="movie_list_today.php">BOOKING</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="#">ABOUT</a>

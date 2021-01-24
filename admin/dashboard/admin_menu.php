@@ -2,13 +2,13 @@
     <div class="sidebar-sticky pt-3">
         <ul class="nav flex-column data-nav">
             <li class="nav-item">
-                <a class="nav-link" href="../index.php">
+                <a class="nav-link" href="index.php">
 
                     Dashboard <span class="sr-only">(current)</span>
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="hallDetail/hall.php">
+                <a class="nav-link" href="hall.php">
                     Hall detail
                 </a>
             </li>
@@ -19,7 +19,7 @@
                 </a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="#">
+                <a class="nav-link" href="categories.php">
 
                     Categories
                 </a>

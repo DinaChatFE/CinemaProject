@@ -19,6 +19,8 @@ $(document).ready(function() {
         const movieTitle = $("#Movie_title").val();
         const durationTime = $("#duration_time").val();
         const hall_id = $("#hall_id_add").val()
+        const session_id = $("#session_id_add").val()
+        const categories_id = $("#categories_id_add").val()
         const MoviePrice = $("#Movie_price").val();
         const fileInput = $("#file_input").val();
         const ImageName = $('#file_input')[0].files[0]['name'];
@@ -61,11 +63,14 @@ $(document).ready(function() {
                     'moviePrice': MoviePrice,
                     'moviestatus': MovieStatus,
                     'imgName': ImageName,
-                    'hall_id': hall_id
+                    'hall_id': hall_id,
+                    'session_id': session_id,
+                    'categories_id': categories_id,
 
                 },
                 cache: false,
-                success: function() {
+                success: function(data) {
+                    $("body").append(data)
                     $.ajax({
                         type: "Get",
                         url: "GetData.php",
@@ -75,11 +80,11 @@ $(document).ready(function() {
                         }
 
                     });
-                    $("#Movie_title").val('');
-                    $("#duration_time").val('');
-                    $("#Movie_price").val('');
-                    $("#file_input").val('');
-                    $("#img").attr('src', '../images/blank image.png');
+                    // $("#Movie_title").val('');
+                    // $("#duration_time").val('');
+                    // $("#Movie_price").val('');
+                    // $("#file_input").val('');
+                    // $("#img").attr('src', '../images/blank image.png');
                 }
             });
 
@@ -127,7 +132,6 @@ $(document).ready(function() {
                 url: "DeleteData.php",
                 data: {
                     'ItemID': $ItemID
-
                 },
                 cache: false,
                 success: function() {
@@ -183,9 +187,6 @@ $(document).ready(function() {
 
 
         $("#Updatebtn").click(function(e) {
-
-
-
             e.preventDefault()
             var validationTitle12 = false;
             var validationDuration = false;
@@ -195,9 +196,11 @@ $(document).ready(function() {
             const durationTimeUp = $("#duration_time_update").val();
             const MoviePriceUp = $("#Movie_price_update").val();
 
-
-
-            const imageNameUp = $('#file_input-Update')[0].files[0]['name'];
+            if ($("#file_input-Update").val() === '') {
+                var imageNameUp = ImageView.val();
+            } else {
+                var imageNameUp = $('#file_input-Update')[0].files[0]['name'];
+            }
 
             if (movieTitleUp === '') {
                 $("#errorMovieTitleUpdate").removeClass('d-none');
@@ -224,6 +227,8 @@ $(document).ready(function() {
                 $("#errorfileImageUpdate").addClass('d-none');
                 validationFileImage = true;
             }
+
+
             console.log(movieTitleUp, durationTimeUp, MoviePriceUp, imageNameUp)
             if (validationTitle12 == true && validationMoviePrice == true &&
                 validationDuration == true && validationFileImage == true) {
@@ -245,6 +250,7 @@ $(document).ready(function() {
                             data: "data",
                             success: function(data) {
                                 $('#Tableinfo').html(data);
+                                $("#MymodelUpdate").modal("toggle");
                             }
                         });
                     }

@@ -6,7 +6,7 @@ $result = $con->query($sql);
 while ($row = mysqli_fetch_array($result)) {
     echo "<div><tr id = '$row[movieID]'>";
 
-    echo "<td id='MovieID'>" . $row['movieID'] . "<input type='checkbox' name='ck[]' value='Visible' style ='margin-left: 20px;'></td>";
+    echo "<td id='MovieID'>" . $row['movieID'] . "</td>";
     echo "<input type='hidden' value ='" . $row['movieID'] . "'>";
     echo "<td id='MovieTitle'>" . $row['movieTitle'] . "</td>";
     echo "<input type='hidden' value ='" . $row['movieTitle'] . "'>";
@@ -17,7 +17,7 @@ while ($row = mysqli_fetch_array($result)) {
     echo "<td id='movieStatus'>" . $row['movieStatus'] . "</td>";
     echo "<td id='hall_id'>" . $row['hall_id'] . "</td>";
     echo "<input type='hidden' value ='" . $row['hall_id'] . "'>";
-    echo "<td style='display: flex ;height: 40px ;align-items: center'><img src='../images/" . $row['image'] . "'width='100px' height='100px' id='imgView'><button class ='btn btn-primary m-2' id='EditBtn'>Edit</button><button class = 'btn btn-danger' id='DeleteBtn' >Delete</button></td>";
-    echo "<input type='hidden' value ='" . $row['image'] . "'>";
+    echo "<td style='display: flex ;height: 100% ;align-items: center;overflow: hidden'><img src='../images/" . $row['image'] . "'width='100px' height='100px' id='imgView'><button class ='btn btn-primary m-2' id='EditBtn'>Edit</button><button class = 'btn btn-danger' id='DeleteBtn' >Delete</button></td>";
+    echo "<input type='hidden' value ='" . $row['image'] . "' class='object-fit: cover'>";
     echo "</tr></div>";
 }

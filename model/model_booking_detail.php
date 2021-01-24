@@ -11,8 +11,9 @@ if (isset($get_id)) {
     $result_detail = fetchAssoc($conn, $sql_query);
 
     $result_hall = $result_detail['hall_id'];
+    $result_session_id = $result_detail['session'];
 
-    $sql_select_hal = "SELECT *FROM seat LEFT JOIN hall ON seat.hal_id = hall.hall_id WHERE hall_id =  $result_hall ";
+    $sql_select_hal = "SELECT *FROM seat LEFT JOIN hall ON seat.hal_id = hall.hall_id WHERE hall_id = $result_hall AND session = $result_session_id";
 
     // fetch seat
     $query_seat = mysqli_query($conn, $sql_select_hal);

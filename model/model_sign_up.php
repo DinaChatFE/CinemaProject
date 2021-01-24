@@ -1,6 +1,6 @@
 <?php
 include '../config/db.php';
-include '../Funcion/setSession.php';
+include '../Function/setSession.php';
 session_start();
 
 $name = $_POST['name'];
@@ -30,7 +30,7 @@ if (isset($name) && isset($address) && isset($gender) && isset($email) && isset(
         }
 
     } else {
-        echo "email must be uniq";
+        echo "<script>alert('Email must be uniq')</script>";
     }
 
 }

@@ -95,7 +95,7 @@ body #bodyContainer {
   display: -ms-flexbox;
   display: flex;
   margin-top: 100px;
-  max-width: 1200px !important;
+  max-width: 1500px !important;
   margin: 0px auto !important;
   padding: 50px;
 }
@@ -159,7 +159,6 @@ body #line {
 }
 
 body #line .separator {
-  width: 500px;
   height: 12px;
   border-bottom: 1px solid black;
 }

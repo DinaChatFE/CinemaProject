@@ -1,7 +1,31 @@
 <?php
 include 'admin_header.php';
+include './config/db.php';
+
+// query hall selector
+
+$sql_selector_hall = "SELECT*FROM hall";
+
+$query = mysqli_query($conn, $sql_selector_hall);
+
+$selector_result = mysqli_fetch_all($query, MYSQLI_ASSOC);
+// query session selector
+
+$sql_session = "SELECT *FROM session_detail";
+
+$query_session = mysqli_query($conn, $sql_session);
+$selector_session_result = mysqli_fetch_all($query_session, MYSQLI_ASSOC);
+// query categories
+
+$sql_categories = "SELECT * FROM categories";
+$selectors_categories = mysqli_fetch_all(mysqli_query($conn, $sql_categories), MYSQLI_ASSOC);
+
 ?>
 <style>
+body {
+    font-family: sans-serif !important;
+}
+
 .data-nav li:nth-child(1) a {
     color: blue !important;
 }
@@ -49,7 +73,7 @@ include 'admin_menu.php';
                                             field is required!</small>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">duration Time</label>
+                                        <label for="message-text" class="col-form-label">duration Time(mn)</label>
                                         <input type="text" class="form-control" id="duration_time" name="duration_time">
                                         <small id="errordurationTimeUpdate" class="form-text text-danger d-none">This
                                             field is required!</small>
@@ -62,16 +86,50 @@ include 'admin_menu.php';
                                             field is required!</small>
                                     </div>
                                     <div class="mb-3">
-                                        <label for="message-text" class="col-form-label">Hall id</label>
-                                        <input type="text" class="form-control" id="hall_id_add" name="movie_price">
+                                        <label for="message-text" class="col-form-label">select categories</label>
+
+                                        <select name="categories_id_add" id="categories_id_add" class="form-control">
+                                            <option value="">choose</option>
+                                            <?php foreach ($selectors_categories as $selector_categories): ?>
+                                            <option value="<?php echo $selector_categories['categories_id'] ?>">
+                                                <?php echo $selector_categories['categories_name'] ?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                        <small id="errorMoviePriceUpdate" class="form-text text-danger d-none">This
+                                            field is required!</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">select hall</label>
+
+                                        <select name="hall_id_add" id="hall_id_add" class="form-control">
+                                            <option value="">choose</option>
+                                            <?php foreach ($selector_result as $selector): ?>
+                                            <option value="<?php echo $selector['hall_id'] ?>">
+                                                <?php echo $selector['hall_name'] ?></option>
+                                            <?php endforeach?>
+                                        </select>
+                                        <small id="errorMoviePriceUpdate" class="form-text text-danger d-none">This
+                                            field is required!</small>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label for="message-text" class="col-form-label">Select session</label>
+                                        <select name="hall_id_add" id="session_id_add" class="form-control">
+                                            <option value="">choose</option>
+                                            <?php foreach ($selector_session_result as $selector_session): ?>
+                                            <option value="<?php echo $selector_session['session_id'] ?>">
+                                                <?php echo $selector_session['session_name'] ?></option>
+                                            <?php endforeach?>
+                                        </select>
                                         <small id="errorMoviePriceUpdate" class="form-text text-danger d-none">This
                                             field is required!</small>
                                     </div>
                                     <div class="mb-3">
                                         <div class="col-mb-6">
-                                            <label for="message-text" class="col-form-label">Image</label><br>
+                                            <label for="file_input" class="col-form-label">Image</label><br>
                                             <div class="custom-file">
-                                                <input type="file" id="file_input" value="" name="filename">
+
+                                                <input type="file" id="file_input" value="" name="filename"
+                                                    class="form-control">
                                                 <small id="errorfileImageUpdate"
                                                     class="form-text text-danger d-none">This field is required!</small>
                                                 <div style="width:100px; height:100px; background-color: grey; margin-top: 10px;"

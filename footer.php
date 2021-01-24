@@ -1,5 +1,5 @@
    <!--Footer-->
-   <div id="footer">
+   <div id="footer" class="h6">
        <div>
            <p>CONTACT US</p>
        </div>

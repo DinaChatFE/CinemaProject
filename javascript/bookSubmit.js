@@ -11,6 +11,8 @@ $(document).ready(function () {
         console.log(data);
         if (data === "true") {
           location.href = "index.php";
+        } else {
+          console.log(data);
         }
       },
     });

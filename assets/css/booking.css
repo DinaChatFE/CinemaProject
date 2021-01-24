@@ -12,8 +12,13 @@ body #mListTitle {
   margin-left: 100px;
   font-size: clamp(1rem, 1.5vw, 1.5rem);
   margin: 20px 10px;
-  font-family: "cinemaFont";
-  font-weight: 600;
+  font-family: "Squada One", cursive;
+  font-weight: normal;
+  padding: 30px;
+  text-align: left;
+  padding-left: 12%;
+  color: #e720b7;
+  text-transform: uppercase;
 }
 
 body #list {
@@ -25,20 +30,27 @@ body #list {
   -ms-flex-pack: distribute;
       justify-content: space-around;
   width: 90%;
+  margin: 0px auto;
 }
 
 body #list #movieGrid {
-  max-width: 250px;
-  height: 350px;
+  width: 315px;
+  height: 420px;
   border: 1px solid #cccc;
   border-radius: 20px;
   margin: 5px 10px;
   font-family: "cinemaFont" !important;
   overflow: hidden;
+  -webkit-transition: -webkit-transform 0.3s ease;
+  transition: -webkit-transform 0.3s ease;
+  transition: transform 0.3s ease;
+  transition: transform 0.3s ease, -webkit-transform 0.3s ease;
 }
 
 body #list #movieGrid:hover {
   border: 1px solid #e720b7;
+  -webkit-transform: translateY(-2%);
+          transform: translateY(-2%);
 }
 
 body #list #movieGrid #movieImage {
